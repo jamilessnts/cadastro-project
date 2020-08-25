@@ -11,5 +11,5 @@
 
     - Link: https://www.getpostman.com/collections/ec31713dfc9f6f57c91e
 
-    - Arquivo: Cadastro-Requests.postman_collection.json
+    - Arquivo: Cadastro-Requests.postman_collection.json ou
     Path: casdastro-project\src\main\resources# cadastro-project
