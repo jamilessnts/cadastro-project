@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "85a06ad9-a0de-444e-869b-229c710437f6",
+		"name": "Cadastro-Requests",
+		"description": "Coleção de requests para Cadastro Microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "NovoCliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"nome\": \"carlos\",\r\n        \"dataNascimento\": \"20200404\",\r\n        \"cpf\": \"12512365819\",\r\n        \"endereco\": \"Sao judas\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/cadastro/novoCliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"cadastro",
+						"novoCliente"
+					]
+				},
+				"description": "API para criação do cliente.\r\nPara criar novo cliente é necessario os campos:\r\n-nome (mandatório)\r\n-dataNascimento (mandatório)\r\n-cpf (mandatório)\r\n-endereco (mandatório)\r\n-telefone\r\n-email\r\n\r\n "
+			},
+			"response": [
+				{
+					"name": "NovoCliente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nome\": \"Joao\",\r\n        \"dataNascimento\": \"20200404\",\r\n        \"cpf\": \"01512365818\",\r\n        \"endereco\": \"Sao judas\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/cadastro/novoCliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"cadastro",
+								"novoCliente"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 Aug 2020 00:00:44 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 5,\n    \"nome\": \"Joao\",\n    \"dataNascimento\": \"20200404\",\n    \"cpf\": \"01512365818\",\n    \"endereco\": \"Sao judas\",\n    \"telefone\": null,\n    \"email\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Consulta Clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/cadastro/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"cadastro",
+						"clientes"
+					]
+				},
+				"description": "Consulta todos os clientes do cadastro"
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Cliente por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/cadastro/lerCliente/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"cadastro",
+						"lerCliente",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover clientes",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/cadastro/removeCliente/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"cadastro",
+						"removeCliente",
+						"1"
+					]
+				},
+				"description": "Remove clientes pelo Id do Cadastro"
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar cliente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nome\": \"Joao Pedro\",\r\n        \"dataNascimento\": \"20200404\",\r\n        \"cpf\": \"01512365819\",\r\n        \"endereco\": \"Saude\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/cadastro/atualizarCliente/34",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"cadastro",
+						"atualizarCliente",
+						"34"
+					]
+				},
+				"description": "Atualizar cliente, request body obrigatorio"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
